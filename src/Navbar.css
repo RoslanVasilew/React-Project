@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #8194ef, #b118c8); /* Darker shades of blue and purple */
+    color: #e0e0e0; /* A softer white for better readability on darker backgrounds */
+    padding: 10px 20px;
+    height: 70px;
+    position: fixed; /* Fixing navbar to the top */
+    top: 0; /* Align the navbar at the top of the viewport */
+    left: 0; /* Align the navbar to the left of the viewport */
+    width: 100%; /* Ensure it stretches across the full width */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust the size of the logo */
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    padding: 0 15px;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar-menu li a:hover {
+    color: #ff416c; /* A cool hover effect */
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu items on small screens */
+    }
+    /* Add further responsive or toggle styles here for mobile menu */
+}
+
+/* Optional: Add some top padding to the body to ensure content isn't hidden behind the navbar */
+body {
+    padding-top: 70px; /* Adjust this value based on the actual height of your navbar */
+}
