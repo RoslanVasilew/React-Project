@@ -300,6 +300,6 @@ export default function TeacherPage() {
           </table>
         </div>
       </div>
-    </div>
-  );
+      </div>
+    );
 }
