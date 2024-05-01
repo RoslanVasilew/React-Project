@@ -163,11 +163,10 @@ export default function TeacherPage() {
                 showLabels
                 value={value}
                 onChange={(event, newValue) => {
-                  setValue(newValue);
-                  event.target.style.color="white";
+                 setValue(newValue);
                 }}
               >
-                <BottomNavigationAction
+                <BottomNavigationAction id="btnbtn"
                   label="Requsets"
                   icon={<AutoAwesomeMosaicIcon />}
                   onClick={() => {
@@ -177,7 +176,7 @@ export default function TeacherPage() {
                     // document.querySelector(".bigDiv").style.display = "block";
                   }}
                 />
-                <BottomNavigationAction
+                <BottomNavigationAction id="btnbtn"
                   label="History"
                   icon={<AutoAwesomeMosaicIcon />}
                   onClick={() => {
@@ -195,7 +194,7 @@ export default function TeacherPage() {
         </div>
       </div>
       <div className="tableShow">
-        <div className="studentList" id="requsets" style={{ display: "none" }}>
+        <div className="studentList" id="requsets" >
           <br />
           <br />
           <h1>Requests List</h1>
