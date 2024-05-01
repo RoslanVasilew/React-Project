@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "/src/signup.css";
+import "/src/assets/CSS/signup.css";
 import CheckIcon from "@mui/icons-material/Check";
 import HomeIcon from "@mui/icons-material/Home";
 import CloseIcon from "@mui/icons-material/Close";

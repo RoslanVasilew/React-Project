@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/teacherPage.css";
+import "/src/assets/CSS/teacherPage.css";
 import { useNavigate } from "react-router-dom";
 export default function UpdateT() {
     const nav = useNavigate();

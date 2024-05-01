@@ -1,5 +1,5 @@
 import React from 'react';
-import '/src/Navbar.css'; // Ensure the CSS path is correct
+import '/src/assets/CSS/Navbar.css'; // Ensure the CSS path is correct
 
 const Navbar = () => {
     const email = localStorage.getItem('email');  // Get 'email' from local storage
