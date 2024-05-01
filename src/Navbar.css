@@ -2,16 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #8194ef, #b118c8); /* Darker shades of blue and purple */
+    background-image: url('/src/images/background.png'); /* Sets the image as the background */
+    background-size: cover; /* Covers the entire navbar */
+    background-position: center; /* Centers the background image */
     color: #e0e0e0; /* A softer white for better readability on darker backgrounds */
     padding: 10px 20px;
-    height: 70px;
+    height: 85px;
     position: fixed; /* Fixing navbar to the top */
     top: 0; /* Align the navbar at the top of the viewport */
     left: 0; /* Align the navbar to the left of the viewport */
     width: 100%; /* Ensure it stretches across the full width */
-    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    z-index: 1000; /* Lowered to allow other content to overlay */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Diagonal cut from right-bottom to left-bottom */
 }
+
+
+
 
 .navbar-logo img {
     height: 50px; /* Adjust the size of the logo */
@@ -30,7 +36,7 @@
 
 .navbar-menu li a {
     text-decoration: none;
-    color: white;
+    color: rgb(48, 33, 62);
     transition: color 0.3s;
 }
 

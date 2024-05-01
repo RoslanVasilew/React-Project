@@ -141,7 +141,6 @@ export default function StudentPage() {
           color: "white",
         }}
       >
-        <h1>Teachers List</h1>
 
         <div className="teachersCards" style={{ width: "100%" }}>
           {ArrayRenderer(teachers)}
