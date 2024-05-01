@@ -14,14 +14,7 @@ const Navbar = () => {
                 <img src="/src/images/logo.png" alt="Logo" />
             </div>
             <ul className="navbar-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                {email ? (
-                    <li><a href="/" onClick={handleDisconnect}>Disconnect</a></li>
-                ) : (
-                    <li></li>
-                )}
+                <li><a href="/" onClick={handleDisconnect}>Disconnect</a></li>
             </ul>
         </nav>
     );

@@ -65,16 +65,30 @@ export default function StudentPage() {
                   className="primary"
                   onClick={() => {
                     Swal.fire({
-                      title: "Are you sure?",
+                      title: "What would you like to do?",
 
-                      icon: "warning",
+                      icon: "question",
                       showCancelButton: true,
+                      showDenyButton:true,
+                      denyButtonColor:"#3085d6",
+                      denyButtonText:"Sign to class",
                       confirmButtonColor: "#3085d6",
                       cancelButtonColor: "#d33",
                       confirmButtonText: "Yes, Send a Whatsup!",
                     }).then((result) => {
                       if (result.isConfirmed) {
-                       const GetTeacherApi  = api+'api/Teacher/InsertClass/studentemail/'+student.email+'/teacheremail/'+item.email;
+                       
+
+                        const encodedMessage = encodeURIComponent(
+                          `Hey ${item.name}, this is ${student.name} from RV-Lessons.\nI wanted to check about private lessons. Please get back to me`
+                        );
+                        const tmpPhone =
+                          String("972") + String(item.phone.substring(1));
+                        const whatsappUrl = `https://wa.me/${tmpPhone}?text=${encodedMessage}`;
+                        window.open(whatsappUrl, "_blank");
+                      }
+                      if(result.isDenied){
+                        const GetTeacherApi  = api+'api/Teacher/InsertClass/studentemail/'+student.email+'/teacheremail/'+item.email;
                         fetch(GetTeacherApi, {
                           method: "POST",
                           headers: {
@@ -89,25 +103,17 @@ export default function StudentPage() {
                             return response.json();
                           })
                           .then((data) => {
-                              console.log(data);
+                            Swal.fire(`Registered to ${item.name}'s class!`, "", "success");
                           })
                           .catch((error) => {
                     
                             console.log("Error: Teacher not Exists");
                           });
-
-                        const encodedMessage = encodeURIComponent(
-                          `Hey ${item.name}, this is ${student.name} from RV-Lessons.\nI wanted to check about private lessons. Please get back to me`
-                        );
-                        const tmpPhone =
-                          String("972") + String(item.phone.substring(1));
-                        const whatsappUrl = `https://wa.me/${tmpPhone}?text=${encodedMessage}`;
-                        window.open(whatsappUrl, "_blank");
                       }
                     });
                   }}
                 >
-                  Message
+                  Sign to class
                 </button>
               </div>
             </div>
