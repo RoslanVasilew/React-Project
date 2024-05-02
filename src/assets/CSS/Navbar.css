@@ -7,7 +7,7 @@
     background-position: center; /* Centers the background image */
     color: #e0e0e0; /* A softer white for better readability on darker backgrounds */
     padding: 10px 20px;
-    height: 85px;
+    height: 100px;
     position: fixed; /* Fixing navbar to the top */
     top: 0; /* Align the navbar at the top of the viewport */
     left: 0; /* Align the navbar to the left of the viewport */
@@ -20,7 +20,9 @@
 
 
 .navbar-logo img {
-    height: 50px; /* Adjust the size of the logo */
+    margin-top: 15px;
+    height: 150px;
+    width: auto;
 }
 
 .navbar-menu {
@@ -54,4 +56,17 @@
 /* Optional: Add some top padding to the body to ensure content isn't hidden behind the navbar */
 body {
     padding-top: 70px; /* Adjust this value based on the actual height of your navbar */
+}
+
+
+
+
+
+.prfImg{
+    height: 200px;
+    width: 200px;
+    border-radius: 35%;
+    border: 1px solid black;
+    margin-left: 15%;
+    margin-top: -15%;
 }

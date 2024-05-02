@@ -68,6 +68,7 @@ export default function HomePage() {
         })
         .then((data) => {
           localStorage.setItem("email", JSON.stringify(email));
+         
           nav("/teacherPage");
         })
         .catch((error) => {
@@ -97,6 +98,8 @@ export default function HomePage() {
         })
         .then((data) => {
           localStorage.setItem("email", JSON.stringify(email));
+          localStorage.setItem("flag", JSON.stringify("student"));
+          localStorage.setItem("student", JSON.stringify(data));
           nav("/studentpage");
         })
         .catch((error) => {
@@ -162,8 +165,9 @@ export default function HomePage() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Come and Join Ous</p>
+              <h1>Hello, Friend!</h1><br />
+              <h2>Come and Join Us!</h2>
+              <br />
               <button
                 className="ghost"
                 id="signUp"

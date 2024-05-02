@@ -19,6 +19,15 @@ body {
   height: 95px;
   z-index: 1000; 
 }
+.stdImg{
+  height: 80px;
+    width: 80px;
+    z-index: 1001;
+    position: fixed;
+    top: 5px;
+    left: 30%;
+    border-radius: 10px;
+}
 .sample-header::before {
   content: "";
   position: absolute;

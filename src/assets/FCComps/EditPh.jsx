@@ -64,8 +64,7 @@ export default function EditPh() {
       })
       .then((data) => {
         console.log("IMG inserted");
-
-        nav("/studentpage");
+        nav('/studentpage');
       })
       .catch((error) => {
         console.error("Error:", error);

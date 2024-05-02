@@ -124,6 +124,7 @@ export default function StudentPage() {
   };
   return (
     <div>
+      
       <div className="serachBox">
         <input
           type=""
@@ -139,6 +140,8 @@ export default function StudentPage() {
             setTeachers(filterTeacher);
           }}
         ></input>
+        {/* <img src={img} className="stdImg"></img>
+      */}
       </div>
       <div
         className="container1"

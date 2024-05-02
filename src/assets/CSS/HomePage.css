@@ -70,6 +70,7 @@ button:focus {
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+	color:white;
 }
 
 .signin {
@@ -208,6 +209,7 @@ input {
 .overlay-right {
 	right: 0;
 	transform: translateX(0);
+	color: #3c3636;
 }
 
 .container.right-panel-active .overlay-right {
@@ -252,4 +254,8 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+.ghost:hover{
+	color:black;
+	border:1px solid black;
 }
