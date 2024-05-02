@@ -104,6 +104,15 @@ export default function TeacherPage() {
               <div className="header_text flex_column_center">
                 <table className="teacher-info-table">
                   <tbody>
+                    <tr className="notifBar">
+                      <td style={{ textAlign: 'center', width:'100%' }}>
+                       {studentZero.length > 0 ? <>{studentZero.length}<br/> New Requests</> : ""}
+                      </td>
+                      <td style={{ textAlign: 'center', width:'100%', borderLeft:'1px solid' }}>
+                        {studentOne.length > 0 ? <>{studentOne.length}<br/>Students</> : ""}
+                      </td>
+
+                    </tr>
                     <tr>
                       <td>{teacher.name}</td>
                     </tr>

@@ -62,7 +62,7 @@ form .input-box input{
 }
 .input-box input:focus,
 .input-box input:valid{
-  border-color: #4070f4;
+  border-color: #8a5e94;
 }
 form .policy{
   display: flex;
@@ -78,7 +78,7 @@ form h3{
   color: #fff;
   letter-spacing: 1px;
   border: none;
-  background: #4070f4;
+  background: #9956bc;
   cursor: pointer;
 }
 .input-box.button input:hover{
@@ -99,4 +99,17 @@ form .text h3 a:hover{
 img{
     height: 300px;
     width: 300px;
+}
+
+.notifBar{
+  width:100%;
+  background: linear-gradient(to right, #ffffff, #f29fff);
+  border:solid rgb(255, 235, 235) 1px;
+  color:#333;
+  border-radius: 15%;
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
