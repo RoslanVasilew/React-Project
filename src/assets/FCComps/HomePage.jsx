@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "/src/assets/CSS/HomePage.css";
-import Swal from 'sweetalert2';
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material";
+import Swal from "sweetalert2";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 export default function HomePage() {
   const api = "https://localhost:7132/";
@@ -9,6 +15,7 @@ export default function HomePage() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [type, setType] = useState("Teacher");
+  const [fact,setFact] = useState("");
   const nav = useNavigate();
   const validateEmail = (email) => {
     return String(email)
@@ -17,6 +24,19 @@ export default function HomePage() {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+  useEffect(() => {
+    const getFactApi =
+      "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random";
+    fetch("http://numbersapi.com/random/math")
+      .then((response) => response.text())
+      .then((data) => {
+        setFact(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching the math fact:", error);
+       
+      });
+  }, []);
   const checkData = () => {
     if (!validateEmail(email)) {
       setMessage("Wrong Email Format!");
@@ -52,11 +72,11 @@ export default function HomePage() {
         })
         .catch((error) => {
           Swal.fire({
-            title:'Error!',
-            text:'Teacher does not exists!',
-            icon:'error',
-            confirmButtonText:'Close'
-          })
+            title: "Error!",
+            text: "Teacher does not exists!",
+            icon: "error",
+            confirmButtonText: "Close",
+          });
           console.log("Error: Teacher not Exists");
         });
     } else {
@@ -82,11 +102,11 @@ export default function HomePage() {
         .catch((error) => {
           console.log("Error: Student not Exists");
           Swal.fire({
-            title:'Error!',
-            text:'Student does not exists!',
-            icon:'error',
-            confirmButtonText:'Close'
-          })
+            title: "Error!",
+            text: "Student does not exists!",
+            icon: "error",
+            confirmButtonText: "Close",
+          });
         });
     }
   };
@@ -144,25 +164,36 @@ export default function HomePage() {
             <div className="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Come and Join Ous</p>
-              <button className="ghost" id="signUp"
-              onClick={()=>{nav('/teacherSignUp')}}>
+              <button
+                className="ghost"
+                id="signUp"
+                onClick={() => {
+                  nav("/teacherSignUp");
+                }}
+              >
                 Sign Up As A Teahcer
               </button>
               <br />
-              <button className="ghost" id="signUp"
-              onClick={()=>{
-                nav('/studentSignUp');
-              }}>
+              <button
+                className="ghost"
+                id="signUp"
+                onClick={() => {
+                  nav("/studentSignUp");
+                }}
+              >
                 Sign Up As A Student
               </button>
             </div>
           </div>
         </div>
       </div>
-
+      
       <footer>
-        <p>Create Roi Valdman</p>
+      <h2 >{fact}</h2>
       </footer>
     </div>
   );
 }
+
+
+

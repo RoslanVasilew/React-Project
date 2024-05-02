@@ -61,8 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-position: center top;
-  background-size: 100% auto;
+
   
 }
 

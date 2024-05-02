@@ -3,8 +3,9 @@
 }
 body {
   margin: 0;
-  background-position: center top;
-  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 .sample-header {
   position: fixed;
@@ -111,11 +112,20 @@ h2 {
   opacity: 1;
   transition: all .75s ease-in;
   cursor: pointer;
+  
 /*   border: 2px solid tomato; */
 /*   margin-top: 5px; */
 }
 .search-Input{
   width:100%;
+  background: linear-gradient(to right, #cf3af9, #9c85f8);
+  border: 1px solid #fc65fc;
+  border-radius: 215px;
+  color:white;
+}
+.search-Input::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
 }
 /* .search__box:focus, .search__box:hover {
   background-color: #f1f2f6;

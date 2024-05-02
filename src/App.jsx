@@ -14,7 +14,7 @@ import EditPh from './assets/FCComps/EditPh'
 import Navbar from './assets/FCComps/Navbar';
 
 function App() {
-
+  
   return (
    <div>
     <Navbar />

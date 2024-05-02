@@ -11,7 +11,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body{
+  background: url(https://img.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg?w=996&t=st=1714594548~exp=1714595148~hmac=55e42b9…);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,7 +33,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-position: center top;
-  background-size: 100% auto;
+  background-size: 100% 100%;
 }
 
 h1 {
