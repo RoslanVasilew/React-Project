@@ -58,7 +58,6 @@ body {
   line-height: 1.5;
   background: var(--background_color) var(--background_image) no-repeat center;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 

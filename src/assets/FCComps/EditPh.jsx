@@ -12,7 +12,7 @@ export default function EditPh() {
   const nav = useNavigate();
   const startCamera = async () => {
     document.querySelector(".videoSet").style.display = 'block'; 
-    document.querySelector(".canvasSet")?  document.querySelector(".canvasSet").style.display = 'none': console.log("h");
+    document.querySelector(".canvasSet")?  document.querySelector(".canvasSet").style.display = 'none': "";
    
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
@@ -37,7 +37,7 @@ export default function EditPh() {
   const takePhoto = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    document.querySelector(".canvasSet")? document.querySelector(".canvasSet").style.display = 'block':console.log("asd");;
+    document.querySelector(".canvasSet")? document.querySelector(".canvasSet").style.display = 'block':"";
     if (video && canvas) {
       const context = canvas.getContext("2d");
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -63,13 +63,24 @@ export default function EditPh() {
         return response.json();
       })
       .then((data) => {
-        console.log("IMG inserted");
+
+        // Retrieve the student object from localStorage
+        const student = JSON.parse(localStorage.getItem("student") || '{}');
+
+        // Update the img property with the new image
+        student.img = img;
+
+        // Save the updated student object back to localStorage
+        localStorage.setItem("student", JSON.stringify(student));
+
+        // Navigate to the student page
         nav('/studentpage');
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-  };
+};
+
   return (
     <div>
       <div className="mb-1">
@@ -82,21 +93,22 @@ export default function EditPh() {
             onChange={(event) => {
               let file = event.target.files[0];
               const reader = new FileReader();
-
+            
               reader.onload = function (event) {
                 const base64String = event.target.result;
-                console.log(base64String);
-                // Display the Base64 string in a textarea
-                setSelectedImage(base64String.split(",")[1]);
+                setSelectedImage(base64String.split(",")[1]);  // Save base64 encoded image data
+                
+                document.querySelector(".videoSet").style.display = 'none'; 
+                setImageUrl(base64String);  // Also update imageUrl to display the uploaded image
               };
-
+            
               reader.onerror = function (error) {
                 console.error("Error: ", error);
               };
-
-              // This will start the file reading process
-              reader.readAsDataURL(file);
+            
+              reader.readAsDataURL(file);  // Start the file reading process
             }}
+            
           />
         </div>
       </div>
@@ -126,6 +138,8 @@ export default function EditPh() {
       </div>
       <br />
       <button onClick={send}>Send</button>
+      <button onClick={() => nav('/studentpage')}>Cancel</button>
+
     </div>
   );
 }

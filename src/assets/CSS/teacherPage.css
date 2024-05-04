@@ -5,15 +5,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  background-position: center top;
-  background-size: 100% auto;
-}
+
 .wrapper{
   margin-top:80px;
   position: relative;

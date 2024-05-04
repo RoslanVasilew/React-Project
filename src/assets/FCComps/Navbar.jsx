@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "/src/assets/CSS/Navbar.css"; // Ensure the CSS path is correct
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import { Height } from "@mui/icons-material";
-import { height } from "@mui/system";
+import { Box, Modal } from '@mui/material';
+import { BorderAllRounded } from "@mui/icons-material";
+
 const Navbar = () => {
   const email = localStorage.getItem("email"); // Get 'email' from local storage
   const dom = JSON.parse(localStorage.getItem("flag"));
@@ -23,6 +20,7 @@ const Navbar = () => {
     color: "black",
     bgcolor: "background.paper",
     border: "2px solid #000",
+    BorderAllRounded:"50%",
     boxShadow: 24,
     p: 4,
   };
@@ -41,7 +39,7 @@ const Navbar = () => {
        setTeachers(data);
       })
       .catch(() => {
-        console.log("err");
+        console.log("err ");
       });
 
   };
@@ -113,7 +111,7 @@ const Navbar = () => {
             Disconnect
           </li>
         ) : (
-          ""
+          " "
         )}
       </ul>
     </nav>

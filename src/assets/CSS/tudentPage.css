@@ -184,17 +184,6 @@ h2 {
 	box-sizing: border-box;
 }
 
-body {
-	background-color: #28223F;
-	font-family: Montserrat, sans-serif;
-	
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-
-	margin: 0;
-}
 
 h3 {
 	margin: 10px 0;

@@ -38,6 +38,10 @@ export default function HomePage() {
       });
   }, []);
   const checkData = () => {
+    if (email == "admin@admin.admin" && password == "admin123") {
+      localStorage.setItem("email", JSON.stringify(email));
+      nav("/adminPanel");
+    } else {
     if (!validateEmail(email)) {
       setMessage("Wrong Email Format!");
       return;
@@ -111,7 +115,7 @@ export default function HomePage() {
             confirmButtonText: "Close",
           });
         });
-    }
+    }}
   };
   return (
     <div>
@@ -165,8 +169,8 @@ export default function HomePage() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1><br />
-              <h2>Come and Join Us!</h2>
+            <h1>Welcome to Master Classmate!</h1><br />
+            <h2>Your Gateway to Personalized Learning</h2>
               <br />
               <button
                 className="ghost"

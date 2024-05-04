@@ -61,7 +61,6 @@ export default function TeacherSignUp() {
       fields,
       img,
     };
-    console.log(teacher);
     const SetTeacherApi = api + "api/Teacher/checkif/email/" + email;
     fetch(SetTeacherApi)
       .then((res) => res.json())

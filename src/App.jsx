@@ -10,8 +10,9 @@ import TeacherSignUp from './assets/FCComps/TeacherSignUp'
 import StudentSignUp from './assets/FCComps/StudentSignUp'
 import UpdateT from './assets/FCComps/UpdateT'
 import EditPh from './assets/FCComps/EditPh'
-//import { Navbar } from 'react-bootstrap'
 import Navbar from './assets/FCComps/Navbar';
+import AdminPanel from './assets/FCComps/AdminPanel';
+
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
       <Route path='/studentSignUp' element={<StudentSignUp/>}></Route>
       <Route path='/updateT' element={<UpdateT/>}></Route>
       <Route path='/editP' element={<EditPh/>}></Route>
+      <Route path='/adminPanel' element={<AdminPanel/>}></Route>
 
     </Routes>
    </div>
