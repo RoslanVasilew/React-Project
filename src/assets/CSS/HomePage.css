@@ -7,6 +7,7 @@
 
 body {
 	background: #f6f5f7;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;

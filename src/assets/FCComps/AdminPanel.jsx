@@ -236,7 +236,7 @@ const rows = [
 
 return (
   email && (email === "admin@admin.admin")? (
-    <div>
+    <div className="adminP">
       <br/>
       <h1>Admin panel</h1>
       <br/>

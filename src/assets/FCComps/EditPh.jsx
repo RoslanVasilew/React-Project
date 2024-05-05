@@ -82,7 +82,7 @@ export default function EditPh() {
 };
 
   return (
-    <div>
+    <div style={{display:"grid", justifyContent:"center"}}>
       <div className="mb-1">
         Set Image: <span className="font-css top">*</span>
         <div className="">

@@ -57,7 +57,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/src/images/logo.png" alt="Logo" />
+        <a href="/"><img src="/src/images/logo.png" alt="Logo" /></a>
       </div>
       <ul className="navbar-menu">
         {dom ? (
