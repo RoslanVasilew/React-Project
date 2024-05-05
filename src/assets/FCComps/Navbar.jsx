@@ -6,9 +6,10 @@ import { BorderAllRounded } from "@mui/icons-material";
 
 const Navbar = () => {
   const email = localStorage.getItem("email"); // Get 'email' from local storage
+  const std = JSON.parse(localStorage.getItem("student"));
   const dom = JSON.parse(localStorage.getItem("flag"));
   const nav = useNavigate();
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
   const [teachers, setTeachers] = useState([]);
   const style = {
     position: "absolute",
@@ -52,15 +53,19 @@ const Navbar = () => {
     nav("/editP");
   };
   const profileShow = () => {
-    const std = JSON.parse(localStorage.getItem("student"));
+   
   };
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/"><img src="/src/images/logo.png" alt="Logo" /></a>
+        {/* <a href="/"><img src="/src/images/logo.png" alt="Logo" /></a> */}
+        <img src="/src/images/logo.png" alt="Logo" style={{cursor: "pointer" }} onClick={()=>{
+          localStorage.clear();
+          nav('/');
+        }} />
       </div>
       <ul className="navbar-menu">
-        {dom ? (
+        {std ? (
           <li style={{ cursor: "pointer" }}>
             <a onClick={handleOpen}>Open modal</a>
             <Modal
@@ -84,7 +89,7 @@ const Navbar = () => {
                   <h2>Teachers:</h2>
                   <ul>
                     {teachers.map((t)=>{
-                        return <li>Name - {t.name} <br/> courses - {t.fields}</li>;
+                        return <li key={t.id}>Name - {t.name} <br/> courses - {t.fields}</li>;
                     })}
                   </ul>
                 </div>
@@ -96,7 +101,7 @@ const Navbar = () => {
         ) : (
           ""
         )}
-        {dom ? (
+        {std ? (
           <li style={{ color: "black", cursor: "pointer" }} onClick={editImg}>
             Edit Img
           </li>

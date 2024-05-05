@@ -7,7 +7,7 @@ export default function StudentPage() {
   const nav = useNavigate();
   const tmpMail = JSON.parse(localStorage.getItem("email"));
   const [img, setSrc] = useState("");
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
   const [student, setStudent] = useState([]);
   const [teachers, setTeachers] = useState([]);
   const [searchData, setSearchData] = useState("");

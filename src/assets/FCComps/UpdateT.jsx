@@ -10,7 +10,7 @@ export default function UpdateT() {
     const [password, setPassword] = useState("");
     const [fields, setFields] = useState("");
     const [err, setErr] = useState("");
-    const api = "https://localhost:7132/";
+    const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
     const SignUpFunction = () => {
       let regex = /^[a-zA-Z]+$/;
       if (!regex.test(name)) {

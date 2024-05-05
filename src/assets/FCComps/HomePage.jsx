@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 export default function HomePage() {
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");

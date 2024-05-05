@@ -16,7 +16,7 @@ export default function TeacherPage() {
   const [studentOne, setStudentsOne] = useState([]);
   const [imgSrc, setSrc] = useState("");
   const tmpMail = JSON.parse(localStorage.getItem("email"));
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
 
   useEffect(() => {
     const SetTeacherApi = api + "api/Teacher/checkif/email/" + tmpMail;

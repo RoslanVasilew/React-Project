@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function EditPh() {
   const [img, setSelectedImage] = useState(null);
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
   const tmpMail = JSON.parse(localStorage.getItem("email"));
   const [stream, setStream] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
@@ -72,7 +72,8 @@ export default function EditPh() {
 
         // Save the updated student object back to localStorage
         localStorage.setItem("student", JSON.stringify(student));
-
+        stream.getTracks().forEach((track) => track.stop());
+        setStream(null);
         // Navigate to the student page
         nav('/studentpage');
       })

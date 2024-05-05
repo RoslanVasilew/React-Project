@@ -17,7 +17,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const AdminPanel = () => {
-  const api = "https://localhost:7132/";
+  const api = "https://proj.ruppin.ac.il/cgroup18/test2/tar1/";
   const email = JSON.parse(localStorage.getItem('email'));
   const [teachers, setTeachers] = React.useState([]);
   const [students, setStudents] = React.useState([]);
